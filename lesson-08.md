@@ -56,4 +56,17 @@ You should notice that we are now wrapping both VuetablePagination and VuetableP
 And here's how it should look now.
     ![image](./images/08-1.png)
 
+## Changing Information Text
+
+As you can see the default information text is something like this:
+```
+Displaying 1 to 15 of 200 items
+```
+
+You can change how the information is displayed using the following template:
+- `info-template` 
+- `no-data-template`
+
+See the wiki for [VuetablePaginationInfoMixin](https://github.com/ratiw/vuetable-2/wiki/VuetablePaginationInfoMixin#-info-template)
+
 [Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-8)

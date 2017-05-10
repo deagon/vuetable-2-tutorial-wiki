@@ -93,7 +93,7 @@ To format the `salary` field, we will use `formatNumber` function of [`accountin
 
 First let's include the `accounting.js` using `yarn`
 ```shell
-    $ yarn add accounting
+    $ yarn add accounting --dev
 ```
 
 > We are using original accounting.js library, which is named `accounting`. There are other similar packages, you can pick the one the you like.
@@ -151,7 +151,7 @@ To format date, we will use [`momentjs`](https://momentjs.com/) to do this.
 
 We have to include `momentjs` library first using `yarn`
 ```shell
-$ yarn add moment
+$ yarn add moment --dev
 ```
 > The NPM package for `momentjs` is named `moment`
 

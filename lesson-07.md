@@ -9,7 +9,7 @@ These two pagination components are only different in the appearance. Most of th
 
 That means you can also write your own pagination component with ease by just providing the template that uses available functions in the mixin.
 
-> In the [first version](https://github.com/ratiw/vue-table) of Vuetable, pagination is part of the Vuetable template. This makes it easy to begin with, but this makes it inflexible if you want to customize it. That's why the pagination component is not part of the Vuetable-2 by default.
+> In the [first version](https://github.com/ratiw/vue-table) of Vuetable, pagination is part of the Vuetable template. This makes it easy to begin with, but also makes it inflexible if you want to customize it. That's why the pagination component is not embedded into  Vuetable-2 by default.
 
 Now, let's put the pagination component in our MyVuetable template.
 
@@ -40,11 +40,13 @@ Now, let's put the pagination component in our MyVuetable template.
   </script>
 ```
 
-However, this won't work just yet because Vue would throw an error at you if you run it. The error would be something like this.
+However, this won't work just yet because Vue would throw a compilation error at you if you run it. The error would be something similar to this.
 
 ```shell
     template syntax error Component template should contain exactly one root element.
 ```
+> __Note__  
+> The error message might vary a little bit from different version of Vue
 
 Vue now requires that your component has only one root and if it doesn't, it will throw the above error message.
 

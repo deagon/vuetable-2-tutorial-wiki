@@ -34,7 +34,10 @@ Once you press Enter, vue-cli will download the [webpack template](https://githu
   Enter your name as the author of the project.
 
 - `Vue build`
-  Select which build of Vue.js you would like to use in this project. In this case, we'll select the first option which is a standalone version (Runtime + Compiler). Please see the difference between these versions [here](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build).
+  Select which build of Vue.js you would like to use in this project. In this case, we'll select the first option which is a "standalone" version (Runtime + Compiler). Please see the difference between these versions [here](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build).
+
+- `Install vue-router? (Y/n)
+  Press `N` to answer `No` here as we do not need to use vue-router in our tutorial.
 
 - `Use ESLint to lint your code?`
   Please select `No` for this option as it gives you less headache to start with. If you want to keep your mind busy or want to learn more about it, go read it [here](http://eslint.org/).
@@ -51,6 +54,7 @@ Here is the example.
   > Project description: **_Vuetable tutorial project_**
   > Author: **_your name_**
   > Vue build: **_standalone (Runtime + Compiler)_**
+  > Install vue-router? **_No_**
   > Use ESLint to lint your code? **_No_**
   > Setup unit tests with Karma + Mocha? **_No_**
   > Setup e2e tests with Nightwatch? **_No_**
@@ -64,7 +68,7 @@ Once the installation is done, you have to `cd` into the project directory to in
   $ yarn install
 ```
 
-Once it is finished, you can run the project like this.
+This might take awhile as `yarn` trying to install and link all the depencies specify in the `package.json` for you. Once it is finished, you can run the project like this.
 
 ```shell
   $ yarn run dev
@@ -81,7 +85,7 @@ For now, close the page and type `Ctrl+C` in the command line to exit the watch 
 
 Vuetable is designed to be a **presentation layer** of the data on the client side, so it needs to work with API endpoint. For the purpose of this tutorial and the example projects, we alredy have set up an API endpoint for it.
 
-Currently, the API endpoint is at http://vuetable.ratiw.net/api/users
+Currently, the API endpoint is at https://vuetable.ratiw.net/api/users
 
 > If you are interested, the source code of the project is located [here](https://github.com/ratiw/vuetable-sample-api-endpoint)
 
