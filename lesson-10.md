@@ -148,14 +148,14 @@ Here is an example on changing it to use Bootstrap 3 CSS, set the `ascending-ico
 ```vue
   <template>
     <vuetable ref="vuetable"
-      :css="myCSS"
+      :css="css"
     ></vuetable>
   </template>
   <script>
     //...
     data () {
       return {
-        myCSS: {
+        css: {
           ascendingIcon: 'glyphicon glyphicon-chevron-up',
           descendingIcon: 'glyphicon glyphicon-chevron-down'
         }
@@ -164,6 +164,7 @@ Here is an example on changing it to use Bootstrap 3 CSS, set the `ascending-ico
   </script>
 ```
 
+For more information, see [`css`](https://github.com/ratiw/vuetable-2/wiki/Vuetable-Properties#-css) property of Vuetable.
 
 ## Setting default sort order
 
