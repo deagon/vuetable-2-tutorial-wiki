@@ -4,11 +4,11 @@ Special fields are predefined field for specific purpose and their names are alw
 
 There are 5 special fields currently defined in Vuetable.
 
-- `__sequence`
-- `__handle`
-- `__checkbox`
-- `__component`
-- `__slot`
+- [`__sequence`](#__sequence)
+- [`__handle`](#__handle)
+- [`__checkbox`](#__checkbox)
+- [`__component`](#__component)
+- [`__slot`](#__slot)
 
 To use any of these special fields, you just define another field in the `fields` prop and use the special field as the name of the field.
 
@@ -111,7 +111,7 @@ For example, if you want to use `item_code` field instead, you can do so like th
   //...
 ```
 
-You can see what rows are selected by looking into [`selectedTo`]https://github.com/ratiw/vuetable-2/wiki/Vuetable-Data#-selectedto() property of Vuetable.
+You can see what rows are selected by looking into [`selectedTo`](https://github.com/ratiw/vuetable-2/wiki/Vuetable-Data#-selectedto) property of Vuetable.
 
 ### __component:&lt;name&gt;
 
