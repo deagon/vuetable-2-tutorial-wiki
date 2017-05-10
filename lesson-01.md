@@ -20,7 +20,7 @@
 
     <template>
       <vuetable ref="vuetable"
-        api-url="http://vuetable.ratiw.net/api/users"
+        api-url="https://vuetable.ratiw.net/api/users"
         :fields="['name', 'email', 'birthdate']"
       ></vuetable>
     </template>
@@ -50,7 +50,7 @@
         <div id="app"></div>
         <!-- built files will be auto injected -->
 
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js" charset="utf-8"></script>
       </body>
     </html>
