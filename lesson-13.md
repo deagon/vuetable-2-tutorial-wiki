@@ -109,7 +109,7 @@ We used to have event broadcasting/dispatching mechanism in Vue 1.x, but it has 
 
 For us, Vuex is a bit complex for a simple project, so we will instead use the centralized event hub. But you should be able to adapt it to Vuex as well if you wish.
 
-In this lesson, we will not create our own centralized event hub. But we will use another Vue plugin instead and it is called `vue-events` and you can find more information about it and how to install it via `npm` in its [GitHub repo here](https://github.com/cklmercer/vue-events/tree/vue-2.x).
+In this lesson, we will not create our own centralized event hub. But we will use another Vue plugin instead and it is called `vue-events` and you can find more information about it and how to install it via `npm` in its [GitHub repo here](https://github.com/cklmercer/vue-events).
 
 Now, let's use it in our component. Add the following code to `MyVuetable.vue` to import and register it with Vue.
 
