@@ -111,7 +111,7 @@ For example, if you want to use `item_code` field instead, you can do so like th
   //...
 ```
 
-You can see what rows are selected by looking into [`selectedTo`]https://github.com/ratiw/vuetable-2/wiki/Vuetable-Data#-selectedto() property of Vuetable.
+You can see what rows are selected by looking into [`selectedTo`](https://github.com/ratiw/vuetable-2/wiki/Vuetable-Data#-selectedto) property of Vuetable.
 
 ### __component:&lt;name&gt;
 
