@@ -7,8 +7,8 @@ There are 5 special fields currently defined in Vuetable.
 - [`__sequence`](#__sequence)
 - [`__handle`](#__handle)
 - [`__checkbox`](#__checkbox)
-- [`__component`](#__component)
-- [`__slot`](#__slot)
+- [`__component`](#__componentname)
+- [`__slot`](#__slotname--v120)
 
 To use any of these special fields, you just define another field in the `fields` prop and use the special field as the name of the field.
 
