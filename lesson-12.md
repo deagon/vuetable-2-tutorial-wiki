@@ -1,4 +1,4 @@
-# Lesson 12 - Adding Detail Row
+# Adding Detail Row
 
 Detail row is additional row hidden underneath each data row in the table. You can use it to reveal more data when needed instead of trying to display everything on a single row.
 
