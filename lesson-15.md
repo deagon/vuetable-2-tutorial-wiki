@@ -27,10 +27,10 @@ Let's review our `MyVuetable` template to see what properties are we passing to 
 - sort-order
 - append-params
 
-### # api-url
+### # api-url :white_check_mark:
 This specifies where our component will interact with the API endpoint requesting data to be displayed in the table. This one is usually specific for each module, so this one definitely should be a prop.
 
-### # fields
+### # fields :white_check_mark:
 The field definition for each module would be different, so it must not be hard coded inside our component. This one must also be a prop.
 
 ### # pagination-path (and also data-path)
@@ -43,14 +43,14 @@ So, both `pagination-path` and `data-path` do not need to become a prop for our 
 ### # per-page
 This specifies how many rows the table should be displayed. Since we are aiming for consistent look, it should also be the same and therefore no need to be a prop.
 
-### # multi-sort
+### # multi-sort :white_check_mark:
 This is where you specify that your component can display multiple sort in the table. This is for your consideration but for this lesson we will assume that it is a standard behavior so it does not need to be a prop.
 
-### # sort-order
+### # sort-order :white_check_mark:
 This is where you specify the initial sort order when first displaying data in the table. This is different from module to module, so it will have to be another prop.
 
-### # append-params
+### # append-params :white_check_mark:
 This is where you can pass additional parameters to the server side (in our case, the filter text). This one will likely be different on each module, so it needs to be a prop.
 
-### # detail-row-component
+### # detail-row-component :white_check_mark:
 This specifies the name of a component that will be used to display the content of the detail row. This will also have to be a prop since the data will probably be different as well.
