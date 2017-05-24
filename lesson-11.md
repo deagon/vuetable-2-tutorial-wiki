@@ -1,4 +1,4 @@
-# Lesson 11 - Using special fields
+# Using special fields
 
 Special fields are predefined field for specific purpose and their names are always started with double underscore characters `__`.
 
