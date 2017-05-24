@@ -1,4 +1,4 @@
-# Lesson 8 - Displaying pagination information
+# Displaying pagination information
 
 In this lesson, we are going to add a component to display pagination information showing the number of records currently displaying and how many records are available.
 
