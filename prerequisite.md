@@ -1,4 +1,5 @@
-# Prerequisites
+# Before We Begin
+We need to do the following first
 - Install the required tools
 - sample API endpoint
 
