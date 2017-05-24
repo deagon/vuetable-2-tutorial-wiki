@@ -28,7 +28,7 @@ The tutorial has been designed to be followed along, so you could start from the
 12. [Adding Detail Row](./lesson-12)
 13. [Adding Search Filter](./lesson-13)
 
-14. Moving Field Definitions to another file
+14. [Moving Field Definitions to another file](./lesson-14)
 15. Passing Props to MyVuetable
     - Defining Props
     - API URL
