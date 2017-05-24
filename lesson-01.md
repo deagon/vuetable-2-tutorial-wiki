@@ -1,4 +1,4 @@
-# Lesson 1 - Your first Vuetable
+# Your first Vuetable
 
 * install `babel-preset-es2015` via yarn
   ```shell
