@@ -52,4 +52,5 @@ This is where you specify the initial sort order when first displaying data in t
 ### # append-params
 This is where you can pass additional parameters to the server side (in our case, the filter text). This one will likely be different on each module, so it needs to be a prop.
 
-
+### # detail-row-component
+This specifies the name of a component that will be used to display the content of the detail row. This will also have to be a prop since the data will probably be different as well.
