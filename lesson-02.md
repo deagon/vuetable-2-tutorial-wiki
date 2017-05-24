@@ -1,4 +1,4 @@
-# Lesson 2 - Displaying more fields
+# Displaying more fields
 
 ## Add more fields to MyVuetable
 Looking at the sameple data from the API, we have more information that we could display especially the data in the `address` object. 
