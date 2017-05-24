@@ -1,4 +1,4 @@
-# Lesson 7 - Adding pagination
+# Adding pagination
 
 So far, we have just only display the first page of data. In this lesson, we'll add table pagination to our Vuetable.
 
