@@ -1,4 +1,4 @@
-# Passing Props to MyVuetable
+# Passing Props to MyVuetable - Part 1
 
 So far, we have been building `MyVuetable` component by setting every properties inside the component itself, which is not very useful as a component. It should be generic enough so that we can reuse it somewhere else in our app.
 
