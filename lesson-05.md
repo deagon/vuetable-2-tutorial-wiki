@@ -1,4 +1,4 @@
-# Lesson 5 - Column alignment
+# Column alignment
 
 Let's make some adjustments to the `MyVuetable.vue` by removing and adding some fields.
 
