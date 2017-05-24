@@ -1,4 +1,4 @@
-# Lesson 13 - Adding Search Filter
+# Adding Search Filter
 
 In this lesson, we will add the search bar to send the filter query to our API endpoint.
 
