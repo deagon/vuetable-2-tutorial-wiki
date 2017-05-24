@@ -1,4 +1,4 @@
-# Lesson 4 - Make change to field title
+# Make change to field title
 
 By default, vuetable uses the field name as column title in the table header. But we could easily change it to whatever we want. 
 
