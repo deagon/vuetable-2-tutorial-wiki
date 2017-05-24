@@ -1,4 +1,4 @@
-# Lesson 10 - Make columns sortable
+# Make columns sortable
 
 If your API endpoint support sorting, Vuetable can automatically interact with the API endpoint to request sorted data.
 
