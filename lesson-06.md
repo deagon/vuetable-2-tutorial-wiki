@@ -1,4 +1,4 @@
-# Lesson 6 - Format fields using `callback` option
+# Format fields using `callback` option
 
 In this lesson, we will use `callback` option of Vuetable to format the following fields
 
