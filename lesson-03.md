@@ -1,5 +1,5 @@
 
-# Lesson 3 - Cleaning up code
+# Cleaning up code
 
 In the last lesson, we added more fields to be displayed using the `fields` prop. In the more complex data structure, there could be a lot more field to display. As you can see the `fields` prop could get quite lengthy.
 
