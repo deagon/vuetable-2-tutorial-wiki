@@ -1,4 +1,4 @@
-# Lesson 9 - Customizing Vuetable
+# Customizing Vuetable
 
 In this lesson, we will make some customizations to MyVuetable.
 
