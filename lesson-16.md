@@ -129,11 +129,74 @@ Alright, if we haven't overlooked anything, we should be done here.
 
 Now we need to modify `App.vue`, so that all necessary data are declared and pass into `<my-vuetable>` via properties we've defined earlier. Here is what we need to do:
 - Add `data` section and declare our variables
-- Import field definition in here 
+- Import `FieldDefs.js` in here 
+- Import `Vue` and `DetailRow` and register `DetailRow` with `Vue.use` here
 - Add prop to our App template
+
+So, our `App.vue` should now looks like this:
 
 ```vue
 // App.vue
 
-// 
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <my-vuetable
+      api-url="https://vuetable.ratiw.net/api/users"
+      :fields="fields"
+      :sort-order="sortOrder"
+      :append-params="moreParams"
+      detail-row-component="my-detail-row"
+    ></my-vuetable>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+import FieldDefs from './components/FieldDefs.js'
+import MyVuetable from './components/MyVuetable'
+import DetailRow from './components/DetailRow'
+Vue.component('my-detail-row', DetailRow)
+
+export default {
+  name: 'app',
+  components: {
+    MyVuetable
+  },
+  data () {
+    return {
+      fields: FieldDefs,
+      sortOrder: [
+        {
+          field: 'email',
+          sortField: 'email',
+          direction: 'asc'
+        }
+      ],
+      moreParams: {}
+    }
+  }  
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style> 
 ```
+
+Now, run the project and everything should still work exactly the same. The only difference is that we are now passing relevant properties from our `App` component down to our `MyVuetable` component. This should make it much more reusable.
+
+However, there is one more thing that we still haven't look into which is the [scoped slots](https://vuejs.org/v2/guide/components.html#Scoped-Slots) for our `actions` buttons which is still embedded inside our `MyVuetable`.
+
+The scoped slots cannot be passed down like any other properties. We will deal with this in the next lesson.
+
+
+
+
