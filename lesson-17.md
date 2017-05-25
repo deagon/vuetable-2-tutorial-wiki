@@ -133,9 +133,9 @@ With this information, we can start writing our `render` function for the outerm
 ```javascript
   render (h) {
     return h(
-      //.. first parameter,
-      //.. second parameter,
-      //.. third parameter
+      'div',  //.. first parameter,
+      {},     //.. second parameter,
+      []      //.. third parameter
     )
   },
 ```
@@ -150,6 +150,10 @@ The `createElement` argument (from now on will be referred to as `h`) is actuall
 - The first parameter is the "tag" that you want to render out as HTML tag, in this case, a `div`.
 - The second parameter _(optional)_ is the [Data Object](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) describing the characteristics of the element to be rendered.
 - The third parameter _(optional)_ can be either a string that will be inside the element tag (e.g. `<title>Hello</title>`) or array of its children.
+
+> In this tutorial, we will always write its parameters in its own line, so that it is easier to notice.
+
+Here is the complete `render` function of our outermost `div` block.
 
 ```javascript
   render (h) {
@@ -166,4 +170,11 @@ The `createElement` argument (from now on will be referred to as `h`) is actuall
     )
   },
 ```
+
+We specify that this `div` should have `ui` and `container` class inside the [Data Object](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) in the second parameter.
+
+In the third parameter, we specify that this `div` block will contain __3__ children:
+- the first one (`filter-bar`) does not have any attribute, so we just use `h` to render it out.
+- the second one (`vuetable`) will contain quite a lot information, so we just delegate it to another method (`renderVuetable`) to do the rendering of its block.
+- the third one will also contain some attributes, so we will also delegate to another method (`renderPagination`) to render its own block as well.
 
