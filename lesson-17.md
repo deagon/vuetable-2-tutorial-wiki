@@ -112,7 +112,7 @@ Let's discuss each block and starting writing our `render` function.
 
 ## The "container" `<div>` block
 
-Every Vue component must has exactly one root element, which in our case is the `<div>` block. To be precise, the actual block looks like this. (We will leave out the `<template>` tag from now on.)
+Every Vue component must has exactly one root element, which in our case is the outermost `<div>` block. To be precise, the actual block looks like this. (We will leave out the `<template>` tag from now on.)
 
 ```html
   <div class="ui container">
@@ -122,6 +122,48 @@ Every Vue component must has exactly one root element, which in our case is the 
   </div>
 ```
 
+- It has `ui` and `container` classes
+- It contains __three__ children, which are
+  - `<filter-bar>`
+  - `<vuetable>`, and
+  - pagination `<div>`
 
+With this information, we can start writing our `render` function for the outermost layer, like so.
 
+```javascript
+  render (h) {
+    return h(
+      //.. first parameter,
+      //.. second parameter,
+      //.. third parameter
+    )
+  },
+```
+
+> __Note__   
+> The `render` function is not inside the `methods` section, it lives at the same level as the `props`, `data`, and `methods` section!
+
+When you declare the `render` function, Vue will pass in the `createElement` argument as a parameter. Since we are going to use this argument very often, we should name it very short. And by convention, it usually names `h`.
+
+The `createElement` argument (from now on will be referred to as `h`) is actually a function, so to use it you have to call it and supplies parameters to it and must return itself back to its parent so that the execution can be chained and handled properly by the main instance.
+
+- The first parameter is the "tag" that you want to render out as HTML tag, in this case, a `div`.
+- The second parameter _(optional)_ is the [Data Object](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) describing the characteristics of the element to be rendered.
+- The third parameter _(optional)_ can be either a string that will be inside the element tag (e.g. `<title>Hello</title>`) or array of its children.
+
+```javascript
+  render (h) {
+    return h(
+      'div', 
+      {
+        class: { ui: true, container: true }
+      },
+      [
+        h('filter-bar'),
+        this.renderVuetable(h),
+        this.renderPagination(h)
+      ]
+    )
+  },
+```
 
