@@ -29,17 +29,13 @@ The tutorial has been designed to be followed along, so you could start from the
 13. [Adding Search Filter](./lesson-13)
 
 14. [Moving Field Definitions to another file](./lesson-14)
-15. Passing Props to MyVuetable
-    - Defining Props
-    - API URL
-    - Field Definitions
-    - Sort Order
-    - Detail Row
-16. Passing Scoped Slot to MyVuetable
+15. [Passing Props to MyVuetable - Part 1](./lesson-15)
+16. [Passing Props to MyVuetable - Part 2](./lesson-16)
+17. Passing Scoped Slot to MyVuetable
     - The Problem
     - The Solution: `render` function
     - Converting `<template>` to `render` function
-17. Converting to Bootstrap CSS
+18. Converting to Bootstrap CSS
     - The `css` property
     - Table Styling
     - Pagination Styling
