@@ -85,7 +85,31 @@ Now, we modify the template to use our newly defined properties, like so.
 ### Clean up
 
 We need to clean up the following as well:
-- Looking at the `data` section, you will see that all the variables in this section are no longer needed as they will be passed in via our properties instead, so we can remove all of them here.
+
+Looking at the `data` section, you will see that all the variables in this section are no longer needed as they will be passed in via our properties instead, so we can remove all of them here.
+
+But!! Before we do that, let's review and find its usage inside our `MyVuetable` component so that we do not miss out on anything. Everything seems fine, except for `moreParams` as we have some references in the `onFilterSet` and `onFilterReset` methods down below.
+
+Since we are going to delete `moreParams` here and replace it with `appendParams` prop instead. That means we need to update these two methods to properly use our `appendParams` prop instead. Let's change `moreParams` to `appendParams` in these two methods.
+
+```javascript
+// MyVuetable.vue
+
+  //...
+    onFilterSet (filterText) {
+      this.appendParams.filter = filterText
+      Vue.nextTick( () => this.$refs.vuetable.refresh() )
+    },
+    onFilterReset () {
+      delete this.appendParams.filter
+      Vue.nextTick( () => this.$refs.vuetable.refresh() )
+    }
+  //...
+```
+
+Alright, if we haven't overlooked anything, we should be done here. 
+
+- So, we can now delete all variables in the `data` section.
 
   ```javascript
   // MyVuetable.vue
