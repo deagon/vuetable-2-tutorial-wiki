@@ -228,5 +228,6 @@ In the third parameter, we specify that this `div` block will contain __3__ chil
         ]
       )
     },
+    //...
 ```
 
