@@ -178,3 +178,10 @@ In the third parameter, we specify that this `div` block will contain __3__ chil
 - the second one (`vuetable`) will contain quite a lot information, so we just delegate it to another method (`renderVuetable`) to do the rendering of its block.
 - the third one will also contain some attributes, so we will also delegate to another method (`renderPagination`) to render its own block as well.
 
+## The `<vuetable>` block
+
+
+## The "pagination" `<div>` block
+
+
+
