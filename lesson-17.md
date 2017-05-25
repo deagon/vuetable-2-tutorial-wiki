@@ -175,13 +175,58 @@ We specify that this `div` should have `ui` and `container` class inside the [Da
 
 In the third parameter, we specify that this `div` block will contain __3__ children:
 - the first one (`filter-bar`) does not have any attribute, so we just use `h` to render it out.
-- the second one (`vuetable`) will contain quite a lot information, so we just delegate it to another method (`renderVuetable`) to do the rendering of its block.
+- the second one (`vuetable`) will contain quite a lot information, so we just delegate it to another method (`renderVuetable`) to do the rendering of its block and pass in the `h` for its use inside.
 - the third one will also contain some attributes, so we will also delegate to another method (`renderPagination`) to render its own block as well.
 
 ## The `<vuetable>` block
 
+```javascript
+  methods: {
+    renderVuetable(h) {
+      return h(
+        'vuetable', 
+        { 
+          ref: 'vuetable',
+          props: {
+            apiUrl: this.apiUrl,
+            fields: this.fields,
+            paginationPath: "",
+            perPage: 10,
+            multiSort: true,
+            sortOrder: this.sortOrder,
+            appendParams: this.appendParams,
+            detailRowComponent: this.detailRowComponent,
+          },
+          on: {
+            'vuetable:cell-clicked': this.onCellClicked,
+            'vuetable:pagination-data': this.onPaginationData,
+          },
+          scopedSlots: this.$vnode.data.scopedSlots
+        }
+      )
+    },
+    //...
+```
 
 ## The "pagination" `<div>` block
 
-
+```javascript
+  methods: {
+    //..
+    renderPagination(h) {
+      return h(
+        'div',
+        { class: {'vuetable-pagination': true, 'ui': true, 'basic': true, 'segment': true, 'grid': true} },
+        [
+          h('vuetable-pagination-info', { ref: 'paginationInfo' }),
+          h('vuetable-pagination', {
+            ref: 'pagination',
+            on: {
+              'vuetable-pagination:change-page': this.onChangePage
+            }
+          })
+        ]
+      )
+    },
+```
 
