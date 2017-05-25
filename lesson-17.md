@@ -13,5 +13,115 @@ This seems like a daunting task. Luckily, in our case, this is not that hard but
 - [Render function](https://vuejs.org/v2/guide/render-function.html)
 
 
-## Converting <template> to render function
+## Converting `<template>` to render function
+
+It is possible to start making your component with `render` function from the beginning if your component is not so complex (e.g. does not have a complex html structure). But template is actually more natural and a lot easier to comprehend, especially if you're still new to making Vue component.
+
+In fact, you don't really have to care or learn about `render` function until you really need to use it. Since we would like our users to be able to use scoped slots from our `MyVuetable` component and pass this down to Vuetable, we need to 
+be able to access to `scopedSlots` data object which only available inside the `render` function.
+
+### Reviewing the `<template>`
+
+So, let's begin by reviewing the current template of our `MyVuetable`. This will help guide us on what we need to do.
+
+```vue
+<template>
+  <div class="ui container">
+    <filter-bar></filter-bar>
+    <vuetable ref="vuetable"
+      :api-url="apiUrl"
+      :fields="fields"
+      pagination-path=""
+      :per-page="10"
+      :multi-sort="true"
+      :sort-order="sortOrder"
+      :append-params="appendParams"
+      detail-row-component="detailRowComponent"
+      @vuetable:cell-clicked="onCellClicked"
+      @vuetable:pagination-data="onPaginationData"
+    >
+      //... this used to be where scoped slot "actions" was ...
+    </vuetable>
+    <div class="vuetable-pagination ui basic segment grid">
+      <vuetable-pagination-info ref="paginationInfo"
+      ></vuetable-pagination-info>
+      <vuetable-pagination ref="pagination"
+        @vuetable-pagination:change-page="onChangePage"
+      ></vuetable-pagination>
+    </div>
+  </div>
+</template>
+```
+
+> Please note that the template above does not include the scoped slots "actions".
+> As it should be passed down from the parent component, so it no longer needs to be there.
+
+### **Looks quite intimidating, isn't it?**
+
+__Fear Not!__ It's easier than you might think. There's a trick to that and I'll show you how.
+
+### Digesting the Template
+
+The `render` function is nothing more than mimicking the browser in rendering the HTML. So, if you look at the stardard HTML page, you would see layers of layers of HTML tags inside with the outermost layer is the `<html>` tag.
+
+```html
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        //...
+      </div>
+      <div class="content">
+        //...
+      </div>
+      <div class="footer">
+        //...
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+The `render` function that you're going to write is exactly the same. You render from the outermost layer into the innermost one, step by step, passing the [`createElement` argument](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) (usually denoted with `h` for brevity) down to the inner layer, so that it can be used to render other stuff inside its block.
+
+Let's digest our template down a bit and I'll explain why it is digestible to this.
+
+```vue
+<template>
+  <div>
+    <filter-bar></filter-bar>
+    <vuetable></vuetable>
+    <div>
+      <vuetable-pagination-info></vuetable-pagination-info>
+      <vuetable-pagination></vuetable-pagination>
+    </div>
+  </div>
+</template>
+```
+
+### Look much better, isn't it?
+
+After all, our component structure wasn't so complex. What makes it complex is the functionality inside that has been exposed through its properties and events. When we strip them down, what's left is the skeleton that we can comprehend.
+
+That, however, doesn't mean that we do not need those attributes and directives we omit. We do, but we will deal with them one by one inside its own block.
+
+Let's discuss each block and starting writing our `render` function.
+
+## The "container" `<div>` block
+
+Every Vue component must has exactly one root element, which in our case is the `<div>` block. To be precise, the actual block looks like this. (We will leave out the `<template>` tag from now on.)
+
+```html
+  <div class="ui container">
+    <filter-bar></filter-bar>
+    <vuetable></vuetable>
+    <div></div> <!-- pagination block -->
+  </div>
+```
+
+
+
 
