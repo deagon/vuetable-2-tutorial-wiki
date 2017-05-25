@@ -20,3 +20,6 @@
 12. [Adding Detail Row](./lesson-12)
 13. [Adding Search Filter](./lesson-13)
 14. [Moving Field Definitions to another file](./lesson-14)
+15. [Passing Props to MyVuetable - Part 1](./lesson-15)
+16. [Passing Props to MyVuetable - Part 2](./lesson-16)
+
