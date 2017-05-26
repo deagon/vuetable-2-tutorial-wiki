@@ -70,7 +70,7 @@ Now you should be able to run the project. Try entering something in the text in
 
 At the moment, the `FilterBar` does not do anything much, just logging out a message to the console to prove that it does work.
 
-![image](./images/13-1.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/13-1.png)
 
 ## Removing PaginationInfoTop
 
@@ -97,7 +97,7 @@ In the `onPaginationData` methods, remove the following lines
 
 The top pagination should now be removed.
 
-![image](./images/13-2.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/13-2.png)
 
 Next, we will modify `FilterBar` so that when the user click the "Go" button or press Enter in the text input to apply the filter, we will fire an event to notify other components that the user has just set the filter.
 
@@ -245,6 +245,6 @@ Note that we call `vuetable.refresh()` inside `Vue.nextTick`. This is necessary 
 
 Run the project and try it. The filter functionality should now work.
 
-![image](./images/13-3.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/13-3.png)
 
 [Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-13)
