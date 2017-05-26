@@ -60,7 +60,7 @@ Here is the example.
   > Setup unit tests with Karma + Mocha? **_No_**
   > Setup e2e tests with Nightwatch? **_No_**
 
-  ![image](./images/00-1.PNG)
+  ![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/00-1.png)
 
 Once the installation is done, you have to `cd` into the project directory to install all the dependcies of the project.
 
@@ -76,7 +76,7 @@ This might take awhile as `yarn` trying to install and link all the depencies sp
 ```
 
 You should now see the project running in the web browser like this.
-  ![image](./images/00-2.png)
+  ![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/00-2.png)
 
 The project is now running in watch mode with Hot Reload. Which means you can continue to edit the source code and once you save it, the browser will automatically be upadted to reflect the changes you've made.
 
