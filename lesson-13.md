@@ -247,10 +247,4 @@ Run the project and try it. The filter functionality should now work.
 
 ![image](./images/13-3.png)
 
-# That's wrap!
-
-And that's it for our tutorial! We hope you've learn enough of Vuetable, so that you can successfully use it in your project.
-
-If you like Vuetable and think it does save you some time and works, please consider supporting me using this [PayPal](https://www.paypal.me/ratiw) link. I usually use it to buy ebooks or online courses to expand my knowledge. Thanks!
-
 [Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-13)
