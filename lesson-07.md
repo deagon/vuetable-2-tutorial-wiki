@@ -253,7 +253,7 @@ Now, let's define the handler function
 ```
 
 Once you save and run it, you should now see that pagination on the page like this.
-    ![image](images/07-1.png)
+    ![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/07-1.png)
 
 > In the [first version](https://github.com/ratiw/vue-table) of Vuetable,
 > the binding of pagination component is done automatically. But in order to make it customizable, e.g. pagination component both at the top and bottom of Vuetable, we have to resort to manual binding. As you can see, this is quite easy though.
