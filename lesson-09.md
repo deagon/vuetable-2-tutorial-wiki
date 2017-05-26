@@ -64,7 +64,7 @@ Then, we only need to make a little change to `onPaginationData()` function.
 
 Run the project and you should now see the pagination at the top of the table and working the same as the bottom one as well.
 
-  ![image](./images/09-1.png)
+  ![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/09-1.png)
 
 ## Showing/hiding columns
 
