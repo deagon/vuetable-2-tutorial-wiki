@@ -113,6 +113,6 @@ export default {
 
 Run the project and you should see this
 
-![image](./images/05-1.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/05-1.png)
 
 [Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-5)
