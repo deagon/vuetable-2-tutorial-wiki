@@ -1,9 +1,9 @@
 #### [Tutorial Content](./Home)
 
 ##### Prerequisite
-- [Install the required tools](./_prerequisite#install-the-required-tools)
-- [Create a tutorial project with Vue-CLI](./_prerequisite#create-a-tutorial-project-with-vue-cli)
-- [Sample API endpoint](./_prerequisite#sample-api-endpoint)
+- [Install the required tools](./prerequisite#install-the-required-tools)
+- [Create a tutorial project with Vue-CLI](./prerequisite#create-a-tutorial-project-with-vue-cli)
+- [Sample API endpoint](./prerequisite#sample-api-endpoint)
 
 ##### Lessons
 1. [Your first Vuetable](./lesson-01)
