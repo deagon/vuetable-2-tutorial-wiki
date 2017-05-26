@@ -54,7 +54,7 @@ VuetablePaginationInfo also need to use the pagination information for display. 
 You should notice that we are now wrapping both VuetablePagination and VuetablePaginationInfo inside another `<div>`, so it's easier to style it using CSS.
 
 And here's how it should look now.
-    ![image](./images/08-1.png)
+    ![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/08-1.png)
 
 ## Changing Information Text
 
