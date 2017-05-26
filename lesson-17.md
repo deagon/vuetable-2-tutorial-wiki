@@ -58,7 +58,7 @@ So, let's begin by reviewing the current template of our `MyVuetable`. This will
 
 ### **Looks quite intimidating, isn't it?**
 
-__Fear Not!__ It's easier than you might think. There's a trick to that and I'll show you how.
+__Fear Not!__ It's easier than you might think. There's a trick to that and we'll show you how.
 
 ### Digesting the Template
 
@@ -128,7 +128,7 @@ Every Vue component must has exactly one root element, which in our case is the 
   - `<vuetable>`, and
   - pagination `<div>`
 
-With this information, we can start writing our `render` function for the outermost layer, like so.
+With this information, we can start writing our `render` function for the outermost layer. And here's what the `render` function looks like.
 
 ```javascript
   render (h) {
@@ -149,8 +149,9 @@ The `createElement` argument (from now on will be referred to as `h`) is actuall
 
 - The first parameter is the "tag" that you want to render out as HTML tag, in this case, a `div`.
 - The second parameter _(optional)_ is the [Data Object](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) describing the characteristics of the element to be rendered.
-- The third parameter _(optional)_ can be either a string that will be inside the element tag (e.g. `<title>Hello</title>`) or array of its children.
+- The third parameter _(optional)_ can be either a string that will be inside the element tag (e.g. `<title>Hello</title>`) _or_ an array of its children.
 
+> __Note__   
 > In this tutorial, we will always write its parameters in its own line, so that it is easier to notice.
 
 Here is the complete `render` function of our outermost `div` block.
@@ -178,7 +179,28 @@ In the third parameter, we specify that this `div` block will contain __3__ chil
 - the second one (`vuetable`) will contain quite a lot information, so we just delegate it to another method (`renderVuetable`) to do the rendering of its block and pass in the `h` for its use inside.
 - the third one will also contain some attributes, so we will also delegate to another method (`renderPagination`) to render its own block as well.
 
+Looks how we build the `render` function to follow our digested template. 
+
 ## The `<vuetable>` block
+
+Now, let's look at the `<vuetable>` block and how the `renderVuetable` method will look like. Again, we should start by looking at the template of the `<vuetable>` block.
+
+```html
+  <vuetable ref="vuetable"
+    :api-url="apiUrl"
+    :fields="fields"
+    pagination-path=""
+    :per-page="10"
+    :multi-sort="true"
+    :sort-order="sortOrder"
+    :append-params="appendParams"
+    detail-row-component="detailRowComponent"
+    @vuetable:cell-clicked="onCellClicked"
+    @vuetable:pagination-data="onPaginationData"
+  ></vuetable>
+```
+
+And here is `renderVuetable` function that we've converted from the template above. 
 
 ```javascript
   methods: {
@@ -207,8 +229,29 @@ In the third parameter, we specify that this `div` block will contain __3__ chil
     },
     //...
 ```
+The structure looks the same as in the main `render` function for the `div` block we did earlier. The main different is the Data Object describing this element contains so much more information. Let's break it down:
+
+- The first parameter, we specify that we want to render `vuetable` tag
+- The second parameter, the Data Object (you may need to re-read [this](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) again). If you trace back to the template, you should clearly see how it is converted to each key in the Data Object.
+- The third parameter, the children of this element. In this case, we expect to have the `scopedSlots` pass down from the parent and refer to those scoped slots via `$vnode.data.scopedSlots`.
+
+Now that we've seen the most complex block, the next one should be relatively easy.
 
 ## The "pagination" `<div>` block
+
+Here is the template for the pagination block.
+
+```html
+  <div class="vuetable-pagination ui basic segment grid">
+    <vuetable-pagination-info ref="paginationInfo"
+    ></vuetable-pagination-info>
+    <vuetable-pagination ref="pagination"
+      @vuetable-pagination:change-page="onChangePage"
+    ></vuetable-pagination>
+  </div>
+```
+
+And here is the render function for this block, `renderPagination`.
 
 ```javascript
   methods: {
@@ -231,3 +274,6 @@ In the third parameter, we specify that this `div` block will contain __3__ chil
     //...
 ```
 
+The interesting one is the third parameter where we supply an array of its children.
+
+In this case, each child is quite simple, so we use `h` to render it in-place. No need to create another function for each of them.
