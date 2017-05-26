@@ -99,6 +99,6 @@ Please also note that we also pass the `id` of current data to `toggleDetailRow`
 
 > By default, Vuetable uses `id` column to track the display state of each detail row. If your data does not have `id` column or you use different column, you have to tell Vuetable to use that column via `track-by` prop.
 
-![image](./images/12-1.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/12-1.png)
 
 [Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-12)
