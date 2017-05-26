@@ -22,4 +22,4 @@
 14. [Moving Field Definitions to another file](./lesson-14)
 15. [Passing Props to MyVuetable - Part 1](./lesson-15)
 16. [Passing Props to MyVuetable - Part 2](./lesson-16)
-
+17. [Passing Scoped Slot to MyVuetable](./lesson-17)
