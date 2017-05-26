@@ -98,7 +98,7 @@
 
     you should see something like this
 
-    ![image](./images/01-1.PNG)
+    ![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/01-1.png)
 
 ### Congratulations!
 
