@@ -277,3 +277,92 @@ And here is the render function for this block, `renderPagination`.
 The interesting one is the third parameter where we supply an array of its children.
 
 In this case, each child is quite simple and does not have any children of its own, so we use `h` to render it in-place. No need to create another function for each of them. 
+
+## There, you have it!
+
+We have now completed converting the template to `render` function. So, you can now delete the whole `<template>` section from `MyVuetable.vue` file.
+
+__But our task is not finish yet.__ 
+
+Remember, we have left out the "actions" scoped slot from the template at the begining? Now, we need to move it into the `App.vue`. And as it needs to call `onAction` method, we also need to move `onAction` into `App.vue` as well.
+
+And here is how the `App.vue` should look.
+```vue
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+
+    <my-vuetable
+      api-url="https://vuetable.ratiw.net/api/users"
+      :fields="fields"
+      :sort-order="sortOrder"
+      :append-params="moreParams"
+      detail-row-component="my-detail-row"
+    >
+      <template slot="actions" scope="props">
+        <div class="custom-actions">
+          <button class="ui basic button"
+            @click="onAction('view-item', props.rowData, props.rowIndex)">
+            <i class="zoom icon"></i>
+          </button>
+          <button class="ui basic button"
+            @click="onAction('edit-item', props.rowData, props.rowIndex)">
+            <i class="edit icon"></i>
+          </button>
+          <button class="ui basic button"
+            @click="onAction('delete-item', props.rowData, props.rowIndex)">
+            <i class="delete icon"></i>
+          </button>
+        </div>
+      </template>
+    </my-vuetable>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+import FieldDefs from './components/FieldDefs.js'
+import MyVuetable from './components/MyVuetable'
+import DetailRow from './components/DetailRow'
+Vue.component('my-detail-row', DetailRow)
+
+export default {
+  name: 'app',
+  components: {
+    MyVuetable
+  },
+  data () {
+    return {
+      fields: FieldDefs,
+      sortOrder: [
+        {
+          field: 'email',
+          sortField: 'email',
+          direction: 'asc'
+        }
+      ],
+      moreParams: {}
+    }
+  },  
+  methods: {
+    onAction (action, data, index) {
+      console.log('slot action: ' + action, data.name, index)
+    },    
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+```
+
+[Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-17)
+
