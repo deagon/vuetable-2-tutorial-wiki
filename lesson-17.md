@@ -276,4 +276,4 @@ And here is the render function for this block, `renderPagination`.
 
 The interesting one is the third parameter where we supply an array of its children.
 
-In this case, each child is quite simple, so we use `h` to render it in-place. No need to create another function for each of them.
+In this case, each child is quite simple and does not have any children of its own, so we use `h` to render it in-place. No need to create another function for each of them. 
