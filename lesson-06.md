@@ -205,6 +205,6 @@ And, define `formatDate` function in the `methods` block
   }
 ```
 
-![image](./images/06-1.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/06-1.png)
 
 [Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-6)
