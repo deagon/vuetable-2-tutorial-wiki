@@ -39,7 +39,7 @@ Let's add the sequence number to MyVuetable.
 
 You should now see the sequence column appears on the left side of the table.
 
-![image](./images/11-1.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/11-1.png)
 
 ### __handle
 
@@ -64,7 +64,7 @@ You can use `css.sortHandleIcon` to change the icon that suit your task.
   }
 ```
 
-![image](./images/11-2.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/11-2.png)
 
 ### __checkbox
 
@@ -93,7 +93,7 @@ By default, `__checkbox` will use `id` field for that purpose as it usually uniq
 
 Run the project and try it out!
 
-![image](./images/11-3.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/11-3.png)
 
 If you do not have `id` in your data structure, or want to use another field that could also uniquely identify each column, you have to specify that using `track-by` prop.
 
@@ -206,7 +206,7 @@ Please note that you have to append the name of the component you registered wit
 
 Run the project, and you should now see the new component in the last column of the table. Clicking any button and you should see some output log to the browser's console.
 
-![image](./images/11-4.png)
+![image](https://raw.githubusercontent.com/ratiw/images/master/vuetable-2-tutorial/11-4.png)
 
 ### __slot:&lt;name&gt;  `v1.2.0`
 
