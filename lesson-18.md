@@ -65,14 +65,133 @@ And since Twitter's Bootstrap does not require jQuery by default, we can left it
 
 > If you include your CSS library locally, you'll just have to change the `href` accordingly.
 
+## Dissecting Your App Page
 
-## Changes related to Vuetable and its bundled components (VuetablePagination and VuetablePaginationInfo)
-- create a new file to store CSS for those components
-- field def
-- use `css` prop of each component to assign appropriate config object
-- buttons and icons in "actions" scoped slot
+As we progress through our tutorial lessons, you should have noticed that Vuetable component is only part of the picture here. 
 
-## Changes outside of Vuetable
-- filter-bar
-- app CSS
-- 
+We have also build our own component that utilizes Vuetable and its related components inside. So, it is not only Vuetable that you want to apply the CSS from the CSS framework. Other components like pagination, filter bar will also need to be styled as well. But please remember they are separate components. We have to style it one by one!
+
+So, we will first look at how we can style Vuetable using Bootstrap 3. Then, we will also style VuetablePagination, FilterBar.
+
+## Styling Vuetable
+
+Most of the styling for Vuetable can be done via [`css`](https://ratiw.github.io/vuetable-2/#/CSS-Styling) prop. Since we want to reuse it in other parts of the project or other projects, it is best to just create a new file to store. And here is how the styling object would look like with Bootstrap 3.
+
+```javascript
+export default {
+  tableClass: 'table table-striped table-bordered',
+  ascendingIcon: 'glyphicon glyphicon-chevron-up',
+  descendingIcon: 'glyphicon glyphicon-chevron-down',
+  handleIcon: 'glyphicon glyphicon-menu-hamburger'
+}
+```
+
+## Rending Icon
+
+Different CSS framework uses different markup to render the icon. Here is the same icon markup in Bootstrap and Semantic UI, respectively.
+```html
+<!-- Bootstrap3 -->
+<span class="glyphicon glyphicon-menu-hamburger"></span>
+
+<!-- Semantic UI -->
+<i class="grey sidebar icon"></i>
+```
+
+Luckily, Bootstrap also allow using `<i>` tag as well as `<span>` tag. But in other CSS framework, this might be completely different. 
+
+This is why Vuetable uses `renderIcon` function to render icon in its template, which by default uses Semantic UI syntax. Whereever in Vuetable template that would render icon, it would call this `renderIcon` function. And you can override this by providing your own render icon function inside the `css` object. 
+
+```javascript
+export default {
+  tableClass: 'table table-striped table-bordered',
+  ascendingIcon: 'glyphicon glyphicon-chevron-up',
+  descendingIcon: 'glyphicon glyphicon-chevron-down',
+  handleIcon: 'glyphicon glyphicon-menu-hamburger',
+  renderIcon: function(classes, options) {
+    return `<span class="${classes.join(' ')}"></span>`
+  }
+}
+```
+
+Right now there are only two places in the Vuetable template where `renderIcon` will be called.
+- ascending and descending sort icon in table header, and
+- `__handle` special field
+ 
+What about those other icons in the "Action" column?
+
+Well, in our tutorial they are in a template slot and is not part of Vuetable template. But you will have to put the correct tag in there by yourself.
+
+If you're putting other icon as part of your column title, you'll just have to specify correct tag in the `title` option of the column definition.
+
+## Styling VuetablePagination
+
+Even though, VuetablePagination is provided for convenience, it is generic enough that you could use in your project with a bit of styling you'll have to adapt to achieve the coherent look. And you can do so via its [`css`](https://ratiw.github.io/vuetable-2/#/CSS-Styling?id=pagination) prop as well.
+
+```javascript
+export default {
+  wrapperClass: "pagination pull-right",
+  activeClass: "btn-primary",
+  disabledClass: "disabled",
+  pageClass: "btn btn-border",
+  linkClass: "btn btn-border",
+  icons: {
+    first: "",
+    prev: "",
+    next: "",
+    last: ""
+  }
+}
+```
+
+We can even combine this into one file, like so.
+```javascript
+export default {
+  table: {
+    tableClass: 'table table-striped table-bordered',
+    ascendingIcon: 'glyphicon glyphicon-chevron-up',
+    descendingIcon: 'glyphicon glyphicon-chevron-down',
+    handleIcon: 'glyphicon glyphicon-menu-hamburger',
+    renderIcon: function(classes, options) {
+      return `<span class="${classes.join(' ')}"></span>`
+    }
+  },
+  pagination: {
+    wrapperClass: "pagination pull-right",
+    activeClass: "btn-primary",
+    disabledClass: "disabled",
+    pageClass: "btn btn-border",
+    linkClass: "btn btn-border",
+    icons: {
+      first: "",
+      prev: "",
+      next: "",
+      last: ""
+    }
+  }
+}
+````
+
+So to use that, we just import the file and use it where it should
+```vue
+<template>
+  <vuetable ref="vuetable"
+    //...
+    :css="css.table"
+  ></vuetable>
+  <vuetable-pagination ref="pagination" 
+    //...
+    :css="css.pagination"
+  ></vuetable-pagination>
+</template>
+<script>
+import CssConfig from './VuetableCssConfig.js'
+
+new Vue({
+  el: '#app',
+  data: {
+    //...
+    css: CssConfig,
+  }
+})
+</script>
+```
