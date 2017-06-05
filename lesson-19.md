@@ -6,7 +6,7 @@ Luckily, this is quite easy because Vuetable comes with VuetablePaginationMixin 
 
 This is the pagination markup for Bootstrap 3 as shown on its [website](https://getbootstrap.com/components/#pagination)
 
-![image]()
+![image](https://github.com/ratiw/images/blob/master/vuetable-2-tutorial/bootstrap_pagination.png)
 
 However, it doesn't dictate how the pagination would be displayed if the number of pages is longer than 5. Let's say 100 pages, would it literally display buttons for page 1 up to page 100? 
 
@@ -191,6 +191,6 @@ Compare it to the previous one we have in the last lesson, you'll clearly see th
 
 Now try running the project, it should still work the same but with our own Bootstrap styled pagination component.
 
-[Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-18)
+[Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-19)
 
 You can also look at this [codepen project](https://codepen.io/ratiw/project/editor/DzmJnA/).
