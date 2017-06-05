@@ -23,3 +23,5 @@
 15. [Passing Props to MyVuetable - Part 1](./lesson-15)
 16. [Passing Props to MyVuetable - Part 2](./lesson-16)
 17. [Passing Scoped Slot to MyVuetable](./lesson-17)
+18. [Using Twitter's Bootstrap CSS with Vuetable](./lesson-18)
+19. [Pagination for Twitter's Bootstrap](./lesson-19)
