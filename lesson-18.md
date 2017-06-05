@@ -171,7 +171,10 @@ export default {
 }
 ````
 
-So to use that, we just import the file and use it where it should
+## Applying the style to Vuetable and VuetablePagination
+
+So we are now able to apply the style from our configuration object to our components. All we have to do is just import the file and use it where it should.
+
 ```vue
 <template>
   <vuetable ref="vuetable"
@@ -195,3 +198,55 @@ new Vue({
 })
 </script>
 ```
+
+But in the last lesson, we have already converted our template to render function. So, we have to apply it by setting the `css` prop in our Data Object in `renderVuetable` and `renderPagination` methods.
+
+```javascript
+// MyVuetable.vue
+
+//...
+    renderVuetable(h) {
+      return h(
+        'vuetable', 
+        { 
+          ref: 'vuetable',
+          props: {
+            apiUrl: this.apiUrl,
+            fields: this.fields,
+            paginationPath: "",
+            perPage: 10,
+            multiSort: true,
+            sortOrder: this.sortOrder,
+            appendParams: this.appendParams,
+            detailRowComponent: this.detailRowComponent,
+            css: this.css.table,
+          },
+          on: {
+            'vuetable:cell-clicked': this.onCellClicked,
+            'vuetable:pagination-data': this.onPaginationData,
+          },
+          scopedSlots: this.$vnode.data.scopedSlots
+        }
+      )
+    },
+    renderPagination(h) {
+      return h(
+        'div',
+        { class: {'vuetable-pagination': true} },
+        [
+          h('vuetable-pagination-info', { ref: 'paginationInfo', props: { css: this.css.paginationInfo } }),
+          h('vuetable-pagination', {
+            ref: 'pagination',
+            props: { css: this.css.pagination },
+            on: {
+              'vuetable-pagination:change-page': this.onChangePage
+            }
+          })
+        ]
+      )
+    },
+//...
+```
+
+[Source code for this lesson](https://github.com/ratiw/vuetable-2-tutorial/tree/lesson-18)
+
