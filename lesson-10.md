@@ -116,7 +116,7 @@ By default, Vuetable will only work in single column sorting mode. But if you ne
 ```html
   <template>
     <vuetable ref="vuetable"
-      :muti-sort="true"
+      :multi-sort="true"
     ></vuetable>
   </template>
 ```
@@ -131,7 +131,7 @@ If you would like to change the `Alt` key to something else, you can use `multi-
 ```html
   <template>
     <vuetable ref="vuetable"
-      :muti-sort="true"
+      :multi-sort="true"
       multi-sort-key="ctrl"
     ></vuetable>
   </template>
