@@ -137,7 +137,7 @@ The pagination information that Vuetable uses are
 
 Without those information, Vuetable's pagination component will not work.
 
-> If you are using the API from the service provider that has different data structure or using different variable names, you will have to use [`transform()`]() hook to transform the data structure you received to the one that Vuetable can work with.
+> If you are using the API from the service provider that has different data structure or using different variable names, you will have to use [`transform()`](https://github.com/ratiw/vuetable-2/wiki/Data-Transformation) hook to transform the data structure you received to the one that Vuetable can work with.
 
 ### Pagination path
 
